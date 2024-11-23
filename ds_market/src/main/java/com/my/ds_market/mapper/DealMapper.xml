@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  해당 DB 맞춰서 변경 필요  -->
+<mapper  namespace="DealMapper">
+	
+	<!--  아이템  -->
+	<select id="findByIdxUserIdxAndItemIDx" parameterType="Deal" resultType="Deal">
+			select * from `deal`
+			where buy_user_idx=#{ buy_user_idx} 
+			and 
+			item_idx=#{item_user_idx}
+	</select>
+	
+
+<!-- 아이템 추가  / parameterType 매게변수로 요청으로 Deal DB 가져오기-->
+	<insert id="save" parameterType="Deal">
+		insert into `item`
+		(
+			buy_user_idx,
+			item_idx,
+			created_date
+		)
+		values
+		(
+			#{buy_user_idx},
+			#{item_idx},
+			sysdate()
+		)
+	
+	</insert>
+
+</mapper>

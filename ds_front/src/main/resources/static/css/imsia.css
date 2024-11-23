@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: "b";
+	font-style: normal;
+	src: url(../font/NotoSansKR-Black.ttf) format('truetype');
+}
+
+
+@font-face {
+	font-family: "r";
+	font-style: normal;
+	src: url(../font/NotoSansKR-Regular.ttf) format('truetype');
+}
+
+
+@font-face {
+	font-family: "m";
+	font-style: normal;
+	src: url(../font/NotoSansKR-Medium.ttf) format('truetype');
+}
+
+:root{
+	--color-main:#00dd6d;
+	--page-w:1000px;
+}
+
+#wrap {
+	width : 1450px;
+	display : flex;
+		
+}
+
+.container {
+	margin : 0 auto;
+}

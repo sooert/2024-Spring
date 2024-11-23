@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">	
+		
+	<delete id="delete" parameterType="Integer">
+		delete from `user`
+		where user_idx=#{user_idx}
+	</delete>	
+	
+	
+
+	<update id="updatePw" parameterType="User">
+		UPDATE `user`
+		SET
+			pw=#{pw}
+		WHERE 
+			user_idx=#{user_idx}
+	</update>
+	
+	
+	<select id="findAll" resultType="User">
+		select * from `user`
+	</select>
+	
+	<select id="findByNick" parameterType="String" resultType="User">
+		select * from `user`
+		where nick=#{nick}
+	</select>
+	
+	
+	
+	<!-- 유저 검색 / Integer 숫자 / resultType 유저전체 -->
+	<select id = "findByIdx" parameterType="Integer" resultType="User">
+		select * from `user`
+		<!--  -->
+		where user_idx=#{user_idx}	
+	
+	</select>
+
+<!-- 회원 추가  / parameterType 매게변수로 요청으로 User DB 가져오기-->
+	<insert id="save" parameterType="User">
+		insert into `user`
+		(
+			id,
+			pw,
+			nick,
+			created_date
+		)
+		values
+		(
+			#{id},
+			#{pw},
+			#{nick},
+			sysdate()
+		)
+	
+	</insert>
+		 		
+	
+</mapper>

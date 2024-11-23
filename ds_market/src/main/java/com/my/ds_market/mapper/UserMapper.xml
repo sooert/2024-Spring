@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="UserMapper">	
+	
+	<!-- 유저 검색 /  resultType 유저전체 -->
+	<select id = "findByCode" parameterType="String" resultType="User">
+		select * from `user`
+		<!--  -->
+		where user_code=#{user_code}	
+	
+	</select>
+	
+	
+	<!-- DB 데이터 유저 리스트  -->
+	<select id="findByAll" resultType="User">
+      	select * from `user`
+   	
+   		order by user_idx
+   	</select>
+	
+<!-- 유저 검색 / Integer 숫자 / resultType 유저전체 -->
+	<select id = "findByIdx" parameterType="Integer" resultType="User">
+		select * from `user`
+		<!--  -->
+		where user_idx=#{user_idx}	
+	
+	</select>
+	
+	<!-- 닉네임 찾기  -->
+	<select id="findByNick" parameterType="String" resultType="User">
+		select * from `user`
+		where nick=#{nick}
+	</select>
+	
+		<select id="findById" parameterType="String" resultType="User">
+		select * from `user`
+		where id=#{id}
+	</select>
+	
+	
+		<!-- 포인트 찾기  -->
+	<!-- <select id="findByPoint" parameterType="Point" resultType="User">
+		select * from `Point`
+		where point=#{point}
+	</select>
+	 -->
+	
+	<update id = "updatePoint" parameterType="User">
+		update `user`
+		set
+			point = point + #{point}
+		where
+			user_idx= #{user_idx}
+	
+	
+	</update>
+
+<!-- 회원 추가  / parameterType 매게변수로 요청으로 User DB 가져오기-->
+	<insert id="save" parameterType="User">
+		insert into `user`
+		(
+			id,
+			user_code,
+			pw,
+			nick,
+			address,
+			point,
+			created_date
+		)
+		values
+		(
+			#{id},
+			#{user_code},
+			#{pw},
+			#{nick},
+			#{address},
+			#{point},
+			sysdate()
+		)
+	
+	</insert>
+	
+	<!-- 아이템 추가  / parameterType 매게변수로 요청으로 User DB 가져오기-->
+	<insert id="make" parameterType="Item">
+		insert into `user`
+		(
+			user_idx,
+			name,
+			maker,
+			point,
+			created_date
+		)
+		values
+		(
+			#{user_idx}
+			#{name},
+			#{maker},
+			#{point},
+			sysdate()
+		)
+	
+	</insert>
+	
+	</mapper>

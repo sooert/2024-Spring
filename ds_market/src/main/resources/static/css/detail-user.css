@@ -1,0 +1,14 @@
+@charset "UTF-8";
+:root {
+	--page-w:1050px;
+	--color-main:rgb(209, 173, 173);
+}
+
+body {
+	background: #fff;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+	
+}
+
