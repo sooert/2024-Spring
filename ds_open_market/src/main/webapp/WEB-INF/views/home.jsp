@@ -22,7 +22,7 @@
 			<div class="title">
 				<h2>상품리스트</h2>
 			</div>
-			<section class="product-list">
+			<section id="item-list" class="product-list">
 				<!-- 동적으로 상품이 로드될 영역입니다 -->
 			</section>
 		</div>

@@ -24,7 +24,7 @@
 
 <!-- 다음 주소 api -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
+<script src="./js/util.js"></script>
 <script src="./js/save-user.js"></script>
 <script src="./js/async.js"></script>
 </head>
@@ -45,7 +45,7 @@
 
 				<!-- 프로필 이미지 업로드 -->
 				<img id="profile-img" src="./image/default_profile.png" style="margin-bottom: 10px;"/>
-				<input type="file" id="file" style="padding-top: 10px;">
+				<input type="file" id="file" style="display: none; width: 200px; margin-top: 10px; margin-left: 10px; cursor: pointer;">
 
 				<!-- 아이디 입력 -->
 				<div class="input-with-btn">

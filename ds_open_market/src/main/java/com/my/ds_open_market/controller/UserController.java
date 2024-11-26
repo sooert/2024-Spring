@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.my.ds_open_market.entity.User;
+import com.my.ds_open_market.service.ItemService;
 import com.my.ds_open_market.service.UserService;
 
 @RestController
@@ -24,6 +25,9 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+
+	@Autowired
+	ItemService itemService;
 
 	// 회원 목록 조회
 	@GetMapping("list")

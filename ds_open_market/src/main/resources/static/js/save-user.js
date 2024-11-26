@@ -1,14 +1,3 @@
-// 파이어베이스 설정
-const firebaseConfig = {
-    apiKey: "AIzaSyD0qbd50bRKylrlXfyInH73euD3qqwdCBI",
-    authDomain: "open-market-82ccb.firebaseapp.com", 
-    projectId: "open-market-82ccb",
-    storageBucket: "open-market-82ccb.firebasestorage.app",
-    messagingSenderId: "153123476480",
-    appId: "1:153123476480:web:a627a0fdaaeb6d01efb4e5",
-    measurementId: "G-YPHBM9TV1S"
-};
-
 // 입력 초기화
 function reset() {
     $('#id').val('');

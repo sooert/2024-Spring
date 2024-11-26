@@ -11,26 +11,17 @@ import com.my.ds_open_market.entity.Item;
 @Service
 public class ItemService {
 
-	@Autowired
-	ItemDao itemDao;
+    @Autowired
+    private ItemDao itemDao;
 
-	// 상품 추가
-	public int save(Item item) {
-		return itemDao.save(item);
-	}
 
-	// 상품 찾기
-	public Item findByCode(String item_code) {
-		return itemDao.findByCode(item_code);
-	}
+    public List<Item> findAll(){
+        return itemDao.findAll();
+    }
 
-	// 유저 아이디 찾기
-	public Item findByIdx(Item item) {
-		return itemDao.findByIdx(item);
-	}
+    public int save(Item item) {
+        return itemDao.save(item); 
+    }
+    
 
-	// 모든 상품 조회
-	public List<Item> findAll() {
-		return itemDao.findAll();
-	}
 }

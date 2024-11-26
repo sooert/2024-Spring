@@ -8,28 +8,17 @@ import org.springframework.stereotype.Repository;
 
 import com.my.ds_open_market.entity.Item;
 
-@Repository
+@Repository 
 public class ItemDao {
-	@Autowired
-	SqlSession s;
 
-	// 상품 추가
-	public int save(Item item) {
-		return s.insert("ItemMapper.save", item);
-	}
+    @Autowired
+    SqlSession s;
 
-	// 상품 찾기
-	public Item findByCode(String item_code) {
-		return s.selectOne("ItemMapper.findByCode", item_code);
-	}
+    public List<Item> findAll(){
+        return s.selectList("ItemMapper.findAll");
+    }
 
-	public Item findByIdx(Item item) {
-		return s.selectOne("ItemMapper.findByIdx", item);
-	}
-
-	// 모든 상품 조회
-	public List<Item> findAll() {
-		return s.selectList("ItemMapper.findAll");
-	}
-
+    public int save(Item item) {
+        return s.insert("ItemMapper.save", item);
+    }
 }
