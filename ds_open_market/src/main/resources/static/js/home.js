@@ -1,11 +1,64 @@
 $(document).ready(function(){
-    getItems();
+
+    var totalCount = 0;
+    var countPerPage = 12;
+
+    $(document).on('click','.product-item',function(){
+        var itemCode = $(this).data('item-code');
+        location.href="/detail-item?item_code="+itemCode;
+    });
+
+
+    $.ajax({
+        url:"/api/item/totalCount",
+        method:"get",
+        async:false,
+        success:function(response){
+            totalCount=response;
+        }
+    });
+
+
+ 
+
+
+
+    $('#pagination-demo').twbsPagination({
+        totalPages: Math.ceil(totalCount/countPerPage),
+        visiblePages: 7,    
+        first:'처음으로',
+        last:'마지막으로',
+        prev:'이전',
+        next:'다음',
+        onPageClick: function (event, page) {
+            var start = (page-1)*countPerPage;
+            $('#item-list').empty();
+            getItems(start,countPerPage);
+        }
+    });
+
+    // var start = 0;
+    // const count = 16;
+    // getItems(start,count);
+    // $('#more-btn').click(function(){
+    //     start =start+count;
+    //     getItems(start,count);
+    // });
+
+
+
+
+
 });
 
-function getItems(){ 
+function getItems(s,c){ 
     $.ajax({
         url:"/api/item/findAll",
         method:"get",
+        data:{
+            start:s,
+            count:c
+        },  
         success:function(response){
 
 
@@ -17,7 +70,7 @@ function getItems(){
                var discount_price = item.price * (1-item.discount_rate);
                var mPoint = discount_price * item.m_rate;
                $('#item-list').append(`
-                    <div class="product-item">
+                    <div class="product-item" data-item-code="${item.item_code}">
                         <img src="${item.item_img_url}"/>
                         <div class="product-info">
                             <span style="color:#999;font-size:13px;margin-top:10px;">${item.nick}</span>

@@ -2,6 +2,7 @@ package com.my.ds_open_market.entity;
 
 public class ItemImg {
 
+
     private int item_img_idx=0;
     private int item_idx=0;
     private String item_img_url=null;
@@ -32,6 +33,10 @@ public class ItemImg {
     public void setCreated_date(String created_date) {
         this.created_date = created_date;
     }
+
+
+
+    
 
     
 }

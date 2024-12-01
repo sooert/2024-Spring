@@ -11,8 +11,7 @@
 <link rel="stylesheet" href="./css/style.css"/>
 <link rel="stylesheet" href="./css/style1.css"/>
 <link rel="stylesheet" href="./css/index.css"/>
-<link rel="stylesheet" href="./css/save-item.css"/>
-
+<link rel="stylesheet" href="./css/detail-item.css"/>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase.js"></script>
@@ -25,8 +24,6 @@
 
 </head>
 <body>
-
-	<%@ include file="./include/header.jsp" %>
 	
 	<div class="detail-container1" style="width:650px;display: block;">
 		<div style="color:#191919;font-weight:700;font-size:20px;">
@@ -86,7 +83,8 @@
 				3. 불법, 광고성 이미지 금지.<br/>
 			</div>
 			
-			<input id="detail-img-file" type="file" style="display:none;"/>
+			
+			<input id="detail-img-file" type="file" style=""/>
 			<div id="detail-img-list" class="images-group">
 				<div id="detail-img-upload-box" class="img-upload-box small">
 					<i class="fa-solid fa-plus" style="margin-top:10px;"></i>
@@ -94,7 +92,9 @@
 						<font id="detail-img-count" style="color:var(--color-main);font-weight:700">0</font>/<font id="max-cnt"></font>
 					</div>
 				</div>
-
+				
+				
+				
 				<!-- <div class="img-box" style="">
 					<img src="https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/7fec9212-16d5-43eb-bb62-ec54ac9e41ac.jpeg"/>
 					<div class="del-btn">
@@ -106,6 +106,9 @@
 				
 			</div>
 		</div>
+		
+		
+		
 		
 		<button id="submit-btn" class="long-btn" style="cursor: pointer;margin-top:30px;display: flex;align-items: center;justify-content: center;">
 			<span id="loader" class="loader" style="display: none;"></span>

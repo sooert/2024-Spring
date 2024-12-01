@@ -1,3 +1,12 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyAjMo161z8lVauMCOAiynyo2xcK_SHwlxI",
+    authDomain: "open-market-801f0.firebaseapp.com",
+    projectId: "open-market-801f0",
+    storageBucket: "open-market-801f0.firebasestorage.app",
+    messagingSenderId: "486349643801",
+    appId: "1:486349643801:web:bf1543d2dda44d06668a88",
+    measurementId: "G-ZDKCZ2PVN5"
+};
 
 
 $(document).ready(function() {
@@ -141,7 +150,7 @@ $(document).ready(function() {
 
 
 
-    $("#save-user-btn").click( async function() {
+    $("#save-user-btn").click(function() {
 
         
         if(!valid.id){
@@ -157,28 +166,34 @@ $(document).ready(function() {
             return;
         }
 
-
-        $('#loader').css('display','inline-block');
-        $("#save-user-btn").css('pointer-events','none');
-
         //이미지 업로드 및 주소 확보
         var base64 = $("#profile-img").attr('src');
         if(base64.length<100){
-            saveUserToDB(base64);
+            saveUserToDB('');
         }else{
             //firebase 업로드
-            var img_url=await myFirebase.uploadUserImage(storage,base64,$("#id").val());
-            saveUserToDB(img_url);
+            var ref = storage.ref('some_path').child("img.png");
+            ref.putString(base64, 'data_url').then(function(snapshot){
+                ref.getDownloadURL().then(function(url){
+                    //다운로드 주소 url -> 여기서 ajax로 DB 에 insert 하기
+                    saveUserToDB(url);
+                }).catch(function(err){
+                    //에러
+                });
+            });
         }
         
         
-    
+        
+
+
 
     });
 
 
 
 });
+
 
 function saveUserToDB(img_url){
     $.ajax({

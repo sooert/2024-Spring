@@ -176,7 +176,7 @@ $(document).ready(function(){
                 console.log(data);
                 if(data=='ok'){
                     alert('상품 등록이 완료되었습니다.');
-                    location.href='./home';
+                    location.href='./';
                 }else{
                     alert('상품 등록에 실패하였습니다.');
                 }

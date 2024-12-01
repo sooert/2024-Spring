@@ -1,88 +1,91 @@
 package com.my.ds_open_market.entity;
 
 public class User {
-	// 암호화 키 셋팅
-	// source > gett 으로 받기
-	private int user_idx = 0;
-	private String user_code = null;
-	private String id = null;
-	private String pw = null;
-	private String nick = null;
-	private String img_url = null;
-	private String address = null;
-	private int m_point = 0;
-	private String created_date = null;
 
-	public int getUser_idx() {
-		return user_idx;
-	}
 
-	public void setUser_idx(int user_idx) {
-		this.user_idx = user_idx;
-	}
+    private int user_idx=0;
+    private String user_code= null;
+    private String id=null;
+    private String pw=null;
+    private String nick=null;
+    private String address=null;
+    private int m_point=0;
+    private String created_date=null;
+    private String img_url=null;
 
-	public String getUser_code() {
-		return user_code;
-	}
 
-	public void setUser_code(String user_code) {
-		this.user_code = user_code;
-	}
 
-	public String getId() {
-		return id;
-	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public String getImg_url() {
+        return img_url;
+    }
 
-	public String getPw() {
-		return pw;
-	}
+    public void setImg_url(String img_url) {
+        this.img_url = img_url;
+    }
 
-	public void setPw(String pw) {
-		this.pw = pw;
-	}
+    public int getUser_idx() {
+        return user_idx;
+    }
 
-	public String getNick() {
-		return nick;
-	}
+    public void setUser_idx(int user_idx) {
+        this.user_idx = user_idx;
+    }
 
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
+    public String getUser_code() {
+        return user_code;
+    }
 
-	public String getImg_url() {
-		return img_url;
-	}
+    public void setUser_code(String user_code) {
+        this.user_code = user_code;
+    }
 
-	public void setImg_url(String img_url) {
-		this.img_url = img_url;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getPw() {
+        return pw;
+    }
 
-	public int getM_point() {
-		return m_point;
-	}
+    public void setPw(String pw) {
+        this.pw = pw;
+    }
 
-	public void setM_point(int m_point) {
-		this.m_point = m_point;
-	}
+    public String getNick() {
+        return nick;
+    }
 
-	public String getCreated_date() {
-		return created_date;
-	}
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
 
-	public void setCreated_date(String created_date) {
-		this.created_date = created_date;
-	}
+    public String getAddress() {
+        return address;
+    }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getM_point() {
+        return m_point;
+    }
+
+    public void setM_point(int m_point) {
+        this.m_point = m_point;
+    }
+
+    public String getCreated_date() {
+        return created_date;
+    }
+
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
+    }
+    
 }

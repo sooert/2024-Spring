@@ -17,58 +17,52 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js" integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./js/home.js"></script>
+<script src="./js/detail-item.js"></script>
 
 </head>
+
+<style>
+	.detail-item-img{
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		border:1px solid #f2f2f2;
+		border-radius: 5px;
+	}
+</style>
+
 <body>
 	
 
 	<jsp:include page="./include/header.jsp"/>
 	
-	
+	 
 
 
 
 	<div class="home-container">
-		<div class="inner">
-			<div class="title">
-				<h2>상품리스트</h2>
+		<div class="inner" style="display: flex;">
+			
+
+
+			<div class="detail-item-img-container" style="width: 50%;">
+				
+
+				<section>
+					<img id = "main-item-img" style="border:1px solid #f2f2f2;width: 100%;height: 400px;object-fit: cover;" src="${item.item_img_url}" alt="상품이미지"/>
+				</section>
+
+				<section style="display: flex;gap: 10px;margin-top: 10px;">	
+					<c:forEach items="${itemImgs}" var="itemImg">
+						<img class="detail-item-img" src="${itemImg.item_img_url}" alt="상품이미지"/>
+					</c:forEach>
 			</div>
 
-			<section id="item-list" class="product-list">
-				
+			<div class="detail-item-info-container" style="width: 50%;">
+				456
+			</div>
 
-				
-
-				
-				<!-- <div class="product-item">
-					<img src="https://cafe24.poxo.com/ec01/steampot5114/0X0oriblsbKxpSjRld8pWsyRYhzqmQuL/5AgSkS+SSPd9+nDQsrDXSHW/YHCZhzb/LsUzPXJPb97+Jk919TFQQ==/_/web/product/big/202409/514eb5a8a26d883c89708af08be899cd.png"/>
-					<div class="product-info">
-						<span class="product-name">리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중) 리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중)</span>
-						<del class="product-price">50,000 원</del>
-						<div>
-							<span class="product-discount">20%</span>
-							<span class="product-discount-price">20,500 원</span>
-						</div>
-						<span class="product-point">메버쉽 포인트 10,000원 적립 가능</span>
-
-					</div>
-				</div> -->
-
-				
-				
-
-				
-				
-
-				
-
-
-			</section>
-			<ul id="pagination-demo" class="pagination-sm"></ul>
-
-
-			<button id="more-btn" style="margin:0 auto;display: none;margin-top:50px;margin-bottom: 150px;padding: 8px 20px;">더보기</button>
+			
 
 		</div>
 	</div>
